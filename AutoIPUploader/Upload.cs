@@ -11,13 +11,16 @@ namespace AutoIPUploader
 {
     class Upload
     {
-
+        private const string FileNameGFX = "IP@GFX.txt";
+        private const string LocationGFX = @"C:\Users\嘉维\OneDrive - 开发者联盟\IP\"+FileNameGFX;
+        private const string FileNameSFC = "IP@GFX.txt";
+        private const string LocationSFC = @"C:\Users\wjw_w\OneDrive - 开发者联盟\IP\"+FileNameSFC;
         public static int UploadCount = 0;
         public static bool UploadIP()
         {
             try
             {
-                var file = File.CreateText(@"C:\Users\嘉维\OneDrive - 开发者联盟\IP\IP@GFX.txt");
+                var file = File.CreateText(LocationSFC);
                 file.WriteLine(GetIP());
                 file.Flush();
                 file.Close();
